@@ -1,0 +1,24 @@
+{
+  "name": "express-validations",
+  "version": "1.0.0",
+  "description": "NPM package that provides almost all types of validation methods.",
+  "main": "validations.js",
+  "scripts": {
+    "test": "nyc mocha --require babel-core/register"
+  },
+  "keywords": [
+    "express",
+    "validations",
+    "validation",
+    "validators"
+  ],
+  "author": "Bhavik Shah",
+  "git": "https://github.com/bhavik5/express-validations.git",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  }
+}
