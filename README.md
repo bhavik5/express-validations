@@ -4,11 +4,11 @@
 
 NPM package that provides almost all types of validation methods
 
-  - Upgrade notice
-  - Installation
-  - Usage
-  - Complete List of Validation Methods
-  - License
+  - [Upgrade notice](#Upgrade_Notice_12)
+  - [Installation](#Installation_16)
+  - [Usage](#Usage_22)
+  - [Complete List of Validation Methods](#Complete_List_of_Validation_Methods_39)
+  - [License](#License_49)
 
 ### Upgrade Notice
 
@@ -16,14 +16,17 @@ If you're arriving here as a express-validations v1 user, please check the Usage
 
 ### Installation
 
-    npm install express-validations
+```bash
+    $ npm install express-validations
+```
 
 ### Usage
 
+```javascript
     var express_validations = require('express-validations');
     var email = 'demouser@gmail.com';
     var firstname = 'demouser';
-    
+
     if (express_validations.validations.isValidEmail(email)) {
         // if email address is valid
     } else {
@@ -32,6 +35,7 @@ If you're arriving here as a express-validations v1 user, please check the Usage
     
     express_validations.validations.isValidFirstname(firstname);
     // returns true, if firstname is valid
+```
 
 ### Complete List of Validation Methods
 
