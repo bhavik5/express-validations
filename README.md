@@ -4,11 +4,11 @@
 
 NPM package that provides almost all types of validation methods
 
-  - [Upgrade notice](#Upgrade_Notice_12)
-  - [Installation](#Installation_16)
-  - [Usage](#Usage_22)
-  - [Complete List of Validation Methods](#Complete_List_of_Validation_Methods_39)
-  - [License](#License_49)
+  - Upgrade notice
+  - Installation
+  - Usage
+  - Complete List of Validation Methods
+  - License
 
 ### Upgrade Notice
 
