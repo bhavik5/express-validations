@@ -7,7 +7,7 @@ var testSampleEmail = [
   { input: 'abc#xyz.com', expectedResult: false, description: '"abc#xyz.com" is not valid email' },
   { input: 'abc@123.com.', expectedResult: false, description: '"abc@123.com." is not valid email' },
   { input: 'abc@xyz.c', expectedResult: false, description: '"abc@xyz.c" is not valid email' },
-  { input: undefined, expectedResult: false, description: '"undefined" is not valid email' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
   { input: 'abc@xyz.com', expectedResult: true, description: '"abc@xyz.com" is valid email' },
   { input: 'abc@pqr.xyz.com', expectedResult: true, description: '"abc@pqr.xyz.com" is valid email' }
 ]
@@ -17,7 +17,7 @@ var testSampleFirstname = [
   { input: 'John%Williams', expectedResult: false, description: '"John%Williams" is not valid firstname' },
   { input: 'John@123', expectedResult: false, description: '"John@123" is not valid firstname' },
   { input: '123456', expectedResult: false, description: '"123456" is not valid firstname' },
-  { input: undefined, expectedResult: false, description: '"undefined" is not valid firstname' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
   { input: 'John', expectedResult: true, description: '"John" is valid firstname' }
 ]
 
@@ -25,7 +25,7 @@ var testSampleMiddlename = [
   { input: 'David123', expectedResult: false, description: '"David123" is not valid middlename' },
   { input: 'David@123', expectedResult: false, description: '"David@123" is not valid middlename' },
   { input: '123456', expectedResult: false, description: '"123456" is not valid middlename' },
-  { input: undefined, expectedResult: false, description: '"undefined" is not valid middlename' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
   { input: 'David', expectedResult: true, description: '"David" is valid middlename' }
 ]
 
@@ -33,7 +33,7 @@ var testSampleLastname = [
   { input: 'Williams123', expectedResult: false, description: '"Williams123" is not valid lastname' },
   { input: 'Williams@123', expectedResult: false, description: '"Williams@123" is not valid lastname' },
   { input: '123456', expectedResult: false, description: '"123456" is not valid lastname' },
-  { input: undefined, expectedResult: false, description: '"undefined" is not valid lastname' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
   { input: 'Williams', expectedResult: true, description: '"Williams" is valid lastname' }
 ]
 
@@ -41,7 +41,7 @@ var testSampleFullname = [
   { input: 'John1 David2 Williams', expectedResult: false, description: '"John1 David2 Williams" is not valid fullname' },
   { input: 'John David@Williams', expectedResult: false, description: '"John David@Williams" is not valid fullname' },
   { input: '123456', expectedResult: false, description: '"123456" is not valid fullname' },
-  { input: undefined, expectedResult: false, description: '"undefined" is not valid fullname' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
   { input: 'John David Williams', expectedResult: true, description: '"John David Williams" is valid fullname' }
 ]
 
@@ -51,7 +51,7 @@ var testSampleDate = [
   { input: '29|02|2018', expectedResult: false, description: '"29|02|2018" is not valid date' },
   { input: '29.2018', expectedResult: false, description: '"29.2018" is not valid date' },
   { input: '31/01/20018', expectedResult: false, description: '"31/01/20018" is valid date' },
-  { input: undefined, expectedResult: false, description: '"undefined" is valid date' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
   { input: '31/01/2018', expectedResult: true, description: '"31/01/2018" is valid date' },
   { input: '31.01.2018', expectedResult: true, description: '"31.01.2018" is valid date' },
   { input: '31|01|2018', expectedResult: true, description: '"31|01|2018" is valid date' },
@@ -71,9 +71,54 @@ var testSamplePassword = [
   { input: '`~#por@k', expectedResult: false, description: '"`~#por@k" is not strong password' },
   { input: '^^*2/,)<|*"$', expectedResult: false, description: '"^^*2/,)<|*"$" is not strong password' },
   { input: '~B_][22', expectedResult: false, description: '"~B_][22" is not strong password' },
-  { input: undefined, expectedResult: false, description: '"undefined" is valid password' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
   { input: 'W,54/)*UA(|n', expectedResult: true, description: '"W,54/)*UA(|n" is strong password' },
   { input: '3n@u=T$k\'', expectedResult: true, description: '"3n@u=T$k\'" is strong password' }
+]
+
+var testSampleAlphabets = [
+  { input: 'rqpyyani', expectedResult: true, description: '"rqpyyani" is valid alphabetic string' },
+  { input: 'XXYfZK', expectedResult: true, description: '"XXYfZK" is valid alphabetic string' },
+  { input: 'kctjFhXcGZ', expectedResult: true, description: '"kctjFhXcGZ" is valid alphabetic string' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
+  { input: '123456', expectedResult: false, description: '"123456" is not valid alphabetic string' },
+  { input: 'Alpha@123', expectedResult: false, description: '"Alpha@123" is not valid alphabetic string' }
+]
+
+var testSampleNumbers = [
+  { input: '123456', expectedResult: true, description: '"123456" is valid numeric string' },
+  { input: '1987450564156814', expectedResult: true, description: '"1987450564156814" is valid numeric string' },
+  { input: 'kct1jFh5XcGZ', expectedResult: false, description: '"kct1jFh5XcGZ" is not valid numeric string' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
+  { input: '123G456', expectedResult: false, description: '"123G456" is not valid numeric string' },
+  { input: 'Alpha@123', expectedResult: false, description: '"Alpha@123" is not valid numeric string' }
+]
+
+var testSampleAlphaNumeric = [
+  { input: 'Abc1234', expectedResult: true, description: '"Abc1234" is valid alpha-numeric string' },
+  { input: 'ABCD7867kj', expectedResult: true, description: '"ABCD7867kj" is valid alpha-numeric string' },
+  { input: 'kct1jFh5XcGZ', expectedResult: true, description: '"kct1jFh5XcGZ" is valid alpha-numeric string' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
+  { input: '123@456', expectedResult: false, description: '"123@456" is not valid alpha-numeric string' },
+  { input: 'Alpha@123', expectedResult: false, description: '"Alpha@123" is not valid alpha-numeric string' }
+]
+
+var testSampleNotNumber = [
+  { input: 'Abc@XYZ', expectedResult: true, description: '"Abc@XYZ" is not contains a number' },
+  { input: 'HBR%(VO.I)', expectedResult: true, description: '"HBR%(VO.I)" is not contains a number' },
+  { input: 'kct1jFh5XcGZ', expectedResult: false, description: '"kct1jFh5XcGZ" is contains a number' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
+  { input: '123@456', expectedResult: false, description: '"123@456" is contains a number' },
+  { input: 'Alpha@123', expectedResult: false, description: '"Alpha@123" is contains a number' }
+]
+
+var testSampleNotAlphabets = [
+  { input: '123@456', expectedResult: true, description: '"123@456" is not contains an alphabet' },
+  { input: '10245#^&', expectedResult: true, description: '"10245#^&" is not contains an alphabet' },
+  { input: 'kct1jFh5XcGZ', expectedResult: false, description: '"kct1jFh5XcGZ" is contains an alphabet' },
+  { input: undefined, expectedResult: false, description: '"undefined" is not valid value' },
+  { input: '123A45f6', expectedResult: false, description: '"123A45f6" is contains an alphabet' },
+  { input: 'Alpha@123', expectedResult: false, description: '"Alpha@123" is contains an alphabet' }
 ]
 
 describe('Array', () => {
@@ -128,6 +173,46 @@ describe('Array', () => {
   testSamplePassword.forEach((password) => {
     it(password.description, () => {
       assert.equal(validations.isStrongPassword(password.input), password.expectedResult)
+    })
+  })
+})
+
+describe('Array', () => {
+  testSampleAlphabets.forEach((alphabets) => {
+    it(alphabets.description, () => {
+      assert.equal(validations.isAlpha(alphabets.input), alphabets.expectedResult)
+    })
+  })
+})
+
+describe('Array', () => {
+  testSampleNumbers.forEach((numbers) => {
+    it(numbers.description, () => {
+      assert.equal(validations.isNumeric(numbers.input), numbers.expectedResult)
+    })
+  })
+})
+
+describe('Array', () => {
+  testSampleAlphaNumeric.forEach((alphaNumeric) => {
+    it(alphaNumeric.description, () => {
+      assert.equal(validations.isAlphaNumeric(alphaNumeric.input), alphaNumeric.expectedResult)
+    })
+  })
+})
+
+describe('Array', () => {
+  testSampleNotNumber.forEach((notNumber) => {
+    it(notNumber.description, () => {
+      assert.equal(validations.containsNotNumber(notNumber.input), notNumber.expectedResult)
+    })
+  })
+})
+
+describe('Array', () => {
+  testSampleNotAlphabets.forEach((notAlphabet) => {
+    it(notAlphabet.description, () => {
+      assert.equal(validations.containsNotAlphabets(notAlphabet.input), notAlphabet.expectedResult)
     })
   })
 })
