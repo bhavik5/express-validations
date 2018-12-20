@@ -4,6 +4,12 @@ var { isStrongPassword } = require('./lib/password')
 var { isValidDate } = require('./lib/date')
 var { isAlpha, isNumeric, isAlphaNumeric, containsNotNumber, containsNotAlphabets } = require('./lib/general')
 
-var validations = { isValidEmail, isValidFirstname, isValidMiddlename, isValidLastname, isValidFullname, isStrongPassword, isValidDate, isAlpha, isNumeric, isAlphaNumeric, containsNotNumber, containsNotAlphabets }
+var validations = {
+    isValidEmail,
+    isValidFirstname, isValidMiddlename, isValidLastname, isValidFullname,
+    isStrongPassword,
+    isValidDate,
+    isAlpha, isNumeric, isAlphaNumeric, containsNotNumber, containsNotAlphabets
+}
 
 module.exports = { validations }

@@ -46,11 +46,11 @@ If you're arriving here as a express-validations v1 user, please check the Usage
   - isValidFullname(fullname)
   - isStrongPassword(password)
   - isValidDate(date)
-  - isAlpha(alphabets)
-  - isNumeric(number)
-  - isAlphaNumeric(alphaNumeric)
-  - containsNotNumber(notNumber)
-  - containsNotAlphabets(notAlphabets)
+  - isAlpha(alphabeticString)
+  - isNumeric(numericString)
+  - isAlphaNumeric(alphaNumericString)
+  - containsNotNumber(nonNumericString)
+  - containsNotAlphabets(nonAlphabeticString)
 
 ### License
 
