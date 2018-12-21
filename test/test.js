@@ -121,6 +121,18 @@ var testSampleNotAlphabets = [
   { input: 'Alpha@123', expectedResult: false, description: '"Alpha@123" is contains an alphabet' }
 ]
 
+var testSampleLength = [
+  { input: 'abcdefg', minLength: 0, maxLength: 10, expectedResult: true, description: '"abcdefg" is in specified length range' },
+  { input: 'abcd1234', minLength: 10, maxLength: 20, expectedResult: false, description: '"abcd1234" is not in specified length range' },
+  { input: 'abcdef', minLength: 3, maxLength: null, expectedResult: true, description: '"abcdef" is in specified length range' },
+  { input: 'ab', minLength: 3, maxLength: null, expectedResult: false, description: '"ab" is not in specified length range' },
+  { input: 'abcde', minLength: null, maxLength: 6, expectedResult: true, description: '"abcde" is in specified length range' },
+  { input: 'abcdefg', minLength: null, maxLength: 6, expectedResult: false, description: '"abcdefg" is not in specified length range' },
+  { input: 'abcdefg', minLength: null, maxLength: null, expectedResult: 'minimum length or maximum length is required', description: '"abcdefg" is not in specified length range' },
+  { input: undefined, minLength: 0, maxLength: 6, expectedResult: false, description: '"undefined" is not valid value' },
+  { input: 'abcde', expectedResult: 'minimum length or maximum length is required', description: '"abcde" is not in specified length range' }
+]
+
 describe('Array', () => {
   testSampleEmail.forEach((email) => {
     it(email.description, () => {
@@ -213,6 +225,14 @@ describe('Array', () => {
   testSampleNotAlphabets.forEach((notAlphabet) => {
     it(notAlphabet.description, () => {
       assert.equal(validations.containsNotAlphabets(notAlphabet.input), notAlphabet.expectedResult)
+    })
+  })
+})
+
+describe('Array', () => {
+  testSampleLength.forEach((string) => {
+    it(string.description, () => {
+      assert.equal(validations.isLength(string.input, string.minLength, string.maxLength), string.expectedResult)
     })
   })
 })

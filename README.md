@@ -35,6 +35,10 @@ If you're arriving here as a express-validations v1 user, please check the Usage
     
     express_validations.validations.isValidFirstname(firstname);
     // returns true, if firstname is valid
+
+    express_validations.validations.isLength('String Length', 0, 50)
+    // returns true, if length is between specified range
+    // minLength or maxLength or both is required
 ```
 
 ### Complete List of Validation Methods
@@ -51,6 +55,7 @@ If you're arriving here as a express-validations v1 user, please check the Usage
   - isAlphaNumeric(alphaNumericString)
   - containsNotNumber(nonNumericString)
   - containsNotAlphabets(nonAlphabeticString)
+  - isLength(string, minLength, maxLength)
 
 ### License
 
