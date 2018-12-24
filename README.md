@@ -26,6 +26,8 @@ If you're arriving here as a express-validations v1 user, please check the Usage
     var express_validations = require('express-validations');
     var email = 'demouser@gmail.com';
     var firstname = 'demouser';
+    var minLength = 3;
+    var maxLength = 25;
 
     if (express_validations.validations.isValidEmail(email)) {
         // if email address is valid
@@ -36,9 +38,9 @@ If you're arriving here as a express-validations v1 user, please check the Usage
     express_validations.validations.isValidFirstname(firstname);
     // returns true, if firstname is valid
 
-    express_validations.validations.isLength('String Length', 0, 50)
+    express_validations.validations.isLength('String Length', minLength, maxLength)
     // returns true, if length is between specified range
-    // minLength or maxLength or both is required
+    // If you have only maxLength criteria, use null for minLength
 ```
 
 ### Complete List of Validation Methods
