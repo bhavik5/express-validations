@@ -1,6 +1,6 @@
 var assert = require('assert')
 
-var { validations } = require('../validations')
+var { isValidEmail, isValidFirstname, isValidMiddlename, isValidLastname, isValidFullname, isStrongPassword, isValidDate, isAlpha, isNumeric, isAlphaNumeric, containsNotNumber, containsNotAlphabets, isLength } = require('../validations')
 
 var testSampleEmail = [
   { input: 'abc', expectedResult: false, description: '"abc" is not valid email' },
@@ -136,7 +136,7 @@ var testSampleLength = [
 describe('Array', () => {
   testSampleEmail.forEach((email) => {
     it(email.description, () => {
-      assert.equal(validations.isValidEmail(email.input), email.expectedResult)
+      assert.equal(isValidEmail(email.input), email.expectedResult)
     })
   })
 })
@@ -144,7 +144,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleFirstname.forEach((firstname) => {
     it(firstname.description, () => {
-      assert.equal(validations.isValidFirstname(firstname.input), firstname.expectedResult)
+      assert.equal(isValidFirstname(firstname.input), firstname.expectedResult)
     })
   })
 })
@@ -152,7 +152,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleMiddlename.forEach((middlename) => {
     it(middlename.description, () => {
-      assert.equal(validations.isValidMiddlename(middlename.input), middlename.expectedResult)
+      assert.equal(isValidMiddlename(middlename.input), middlename.expectedResult)
     })
   })
 })
@@ -160,7 +160,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleLastname.forEach((lastname) => {
     it(lastname.description, () => {
-      assert.equal(validations.isValidLastname(lastname.input), lastname.expectedResult)
+      assert.equal(isValidLastname(lastname.input), lastname.expectedResult)
     })
   })
 })
@@ -168,7 +168,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleFullname.forEach((fullname) => {
     it(fullname.description, () => {
-      assert.equal(validations.isValidFullname(fullname.input), fullname.expectedResult)
+      assert.equal(isValidFullname(fullname.input), fullname.expectedResult)
     })
   })
 })
@@ -176,7 +176,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleDate.forEach((date) => {
     it(date.description, () => {
-      assert.equal(validations.isValidDate(date.input), date.expectedResult)
+      assert.equal(isValidDate(date.input), date.expectedResult)
     })
   })
 })
@@ -184,7 +184,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSamplePassword.forEach((password) => {
     it(password.description, () => {
-      assert.equal(validations.isStrongPassword(password.input), password.expectedResult)
+      assert.equal(isStrongPassword(password.input), password.expectedResult)
     })
   })
 })
@@ -192,7 +192,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleAlphabets.forEach((alphabets) => {
     it(alphabets.description, () => {
-      assert.equal(validations.isAlpha(alphabets.input), alphabets.expectedResult)
+      assert.equal(isAlpha(alphabets.input), alphabets.expectedResult)
     })
   })
 })
@@ -200,7 +200,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleNumbers.forEach((numbers) => {
     it(numbers.description, () => {
-      assert.equal(validations.isNumeric(numbers.input), numbers.expectedResult)
+      assert.equal(isNumeric(numbers.input), numbers.expectedResult)
     })
   })
 })
@@ -208,7 +208,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleAlphaNumeric.forEach((alphaNumeric) => {
     it(alphaNumeric.description, () => {
-      assert.equal(validations.isAlphaNumeric(alphaNumeric.input), alphaNumeric.expectedResult)
+      assert.equal(isAlphaNumeric(alphaNumeric.input), alphaNumeric.expectedResult)
     })
   })
 })
@@ -216,7 +216,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleNotNumber.forEach((notNumber) => {
     it(notNumber.description, () => {
-      assert.equal(validations.containsNotNumber(notNumber.input), notNumber.expectedResult)
+      assert.equal(containsNotNumber(notNumber.input), notNumber.expectedResult)
     })
   })
 })
@@ -224,7 +224,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleNotAlphabets.forEach((notAlphabet) => {
     it(notAlphabet.description, () => {
-      assert.equal(validations.containsNotAlphabets(notAlphabet.input), notAlphabet.expectedResult)
+      assert.equal(containsNotAlphabets(notAlphabet.input), notAlphabet.expectedResult)
     })
   })
 })
@@ -232,7 +232,7 @@ describe('Array', () => {
 describe('Array', () => {
   testSampleLength.forEach((string) => {
     it(string.description, () => {
-      assert.equal(validations.isLength(string.input, string.minLength, string.maxLength), string.expectedResult)
+      assert.equal(isLength(string.input, string.minLength, string.maxLength), string.expectedResult)
     })
   })
 })
