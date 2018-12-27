@@ -23,22 +23,22 @@ If you're arriving here as a express-validations v1 user, please check the Usage
 ### Usage
 
 ```javascript
-    var express_validations = require('express-validations');
+    var expressValidations = require('express-validations');
     var email = 'demouser@gmail.com';
     var firstname = 'demouser';
     var minLength = 3;
     var maxLength = 25;
 
-    if (express_validations.isValidEmail(email)) {
+    if (expressValidations.isValidEmail(email)) {
         // if email address is valid
     } else {
         // if email address is invalid
     }
 
-    express_validations.isValidFirstname(firstname);
+    expressValidations.isValidFirstname(firstname);
     // returns true, if firstname is valid
 
-    express_validations.isLength('String Length', minLength, maxLength)
+    expressValidations.isLength('String Length', minLength, maxLength)
     // returns true, if length is between specified range
     // If you have only maxLength criteria, use null for minLength
 ```
