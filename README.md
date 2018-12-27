@@ -17,30 +17,30 @@ If you're arriving here as a express-validations v1 user, please check the Usage
 ### Installation
 
 ```bash
-    $ npm install express-validations
+  $ npm install express-validations
 ```
 
 ### Usage
 
 ```javascript
-    var expressValidations = require('express-validations');
-    var email = 'demouser@gmail.com';
-    var firstname = 'demouser';
-    var minLength = 3;
-    var maxLength = 25;
+  var expressValidations = require('express-validations');
+	var email = 'demouser@gmail.com';
+  var firstname = 'demouser';
+  var minLength = 3;
+  var maxLength = 25;
 
-    if (expressValidations.isValidEmail(email)) {
-        // if email address is valid
-    } else {
-        // if email address is invalid
-    }
+	if (expressValidations.isValidEmail(email)) {
+    // if email address is valid
+  } else {
+    // if email address is invalid
+  }
 
-    expressValidations.isValidFirstname(firstname);
-    // returns true, if firstname is valid
+  expressValidations.isValidFirstname(firstname);
+  // returns true, if firstname is valid
 
-    expressValidations.isLength('String Length', minLength, maxLength)
-    // returns true, if length is between specified range
-    // If you have only maxLength criteria, use null for minLength
+  expressValidations.isLength('String Length', minLength, maxLength)
+  // returns true, if length is between specified range
+  // If you have only maxLength criteria, use null for minLength
 ```
 
 ### Complete List of Validation Methods
@@ -53,7 +53,7 @@ If you're arriving here as a express-validations v1 user, please check the Usage
   - isStrongPassword(password)
   - isValidDate(date)
   - isAlpha(alphabeticString)
-  - isNumeric(numericString)
+	- isNumeric(numericString)
   - isAlphaNumeric(alphaNumericString)
   - containsNotNumber(nonNumericString)
   - containsNotAlphabets(nonAlphabeticString)

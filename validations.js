@@ -5,9 +5,9 @@ var { isValidDate } = require('./lib/date')
 var { isAlpha, isNumeric, isAlphaNumeric, containsNotNumber, containsNotAlphabets, isLength } = require('./lib/general')
 
 module.exports = {
-    isValidEmail,
-    isValidFirstname, isValidMiddlename, isValidLastname, isValidFullname,
-    isStrongPassword,
-    isValidDate,
-    isAlpha, isNumeric, isAlphaNumeric, containsNotNumber, containsNotAlphabets, isLength
+	isValidEmail,
+	isValidFirstname, isValidMiddlename, isValidLastname, isValidFullname,
+	isStrongPassword,
+	isValidDate,
+	isAlpha, isNumeric, isAlphaNumeric, containsNotNumber, containsNotAlphabets, isLength
 }
