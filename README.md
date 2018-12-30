@@ -24,7 +24,7 @@ If you're arriving here as a express-validations v1 user, please check the Usage
 
 ```javascript
   var expressValidations = require('express-validations');
-	var email = 'demouser@gmail.com';
+  var email = 'demouser@gmail.com';
   var firstname = 'demouser';
   var minLength = 3;
   var maxLength = 25;
