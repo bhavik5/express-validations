@@ -29,7 +29,7 @@ If you're arriving here as a express-validations v1 user, please check the Usage
   var minLength = 3;
   var maxLength = 25;
 
-	if (expressValidations.isValidEmail(email)) {
+  if (expressValidations.isValidEmail(email)) {
     // if email address is valid
   } else {
     // if email address is invalid
