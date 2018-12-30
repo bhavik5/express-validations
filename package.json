@@ -1,6 +1,6 @@
 {
 	"name": "express-validations",
-	"version": "1.3.3",
+	"version": "1.3.4",
 	"description": "NPM package that provides almost all types of validation methods.",
 	"main": "validations.js",
 	"scripts": {
