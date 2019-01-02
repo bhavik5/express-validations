@@ -1,6 +1,6 @@
 var assert = require('assert')
 
-var { isValidEmail, isValidFirstname, isValidMiddlename, isValidLastname, isValidFullname, isStrongPassword, isValidDate, isAlpha, isNumeric, isAlphaNumeric, containsNotNumber, containsNotAlphabets, isLength } = require('../validations')
+var { isValidEmail, isValidFirstname, isValidMiddlename, isValidLastname, isValidFullname, isStrongPassword, isValidDate, isAlpha, isNumeric, isAlphaNumeric, containsNotNumber, containsNotAlphabets, isLength, isValidURL } = require('../validations')
 
 var testSampleEmail = [
 	{ input: 'abc', expectedResult: false, description: '"abc" is not valid email' },
@@ -133,6 +133,17 @@ var testSampleLength = [
 	{ input: 'abcde', expectedResult: 'minimum length or maximum length is required', description: '"abcde" is not in specified length range' }
 ]
 
+var testSampleURL = [
+	{ input: 'google.com', expectedResult: true, description: '"google.com" is valid URL' },
+	{ input: 'www.google.com', expectedResult: true, description: '"www.google.com" is valid URL' },
+	{ input: 'http://www.google.com', expectedResult: true, description: '"http://www.google.com" is valid URL' },
+	{ input: 'https://www.google.com', expectedResult: true, description: '"https://www.google.com" is valid URL' },
+	{ input: 'https://www.google.com/specificPageURL', expectedResult: true, description: '"https://www.google.com/specificPageURL" is valid URL' },
+	{ input: 'http//www.google.com', expectedResult: false, description: '"http//www.google.com" is not valid URL' },
+	{ input: '123456', expectedResult: false, description: '"123456" is not valid URL' },
+	{ input: undefined, expectedResult: false, description: '"undefined" is not valid value' }
+]
+
 describe('Array', () => {
 	testSampleEmail.forEach((email) => {
 		it(email.description, () => {
@@ -233,6 +244,14 @@ describe('Array', () => {
 	testSampleLength.forEach((string) => {
 		it(string.description, () => {
 			assert.equal(isLength(string.input, string.minLength, string.maxLength), string.expectedResult)
+		})
+	})
+})
+
+describe('Array', () => {
+	testSampleURL.forEach((url) => {
+		it(url.description, () => {
+			assert.equal(isValidURL(url.input), url.expectedResult)
 		})
 	})
 })

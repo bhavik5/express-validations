@@ -58,6 +58,7 @@ If you're arriving here as a express-validations v1 user, please check the Usage
   - containsNotNumber(nonNumericString)
   - containsNotAlphabets(nonAlphabeticString)
   - isLength(string, minLength, maxLength)
+  - isValidURL(url)
 
 ### License
 
