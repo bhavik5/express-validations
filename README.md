@@ -2,6 +2,8 @@
 
 [![npm Status](https://img.shields.io/npm/v/express-validator.svg)](https://travis-ci.org/joemccann/dillinger) [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
+[![npm package](https://nodei.co/npm/express-validations.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/express-validations/)
+
 NPM package that provides almost all types of validation methods
 
   - [Upgrade notice](#upgrade-notice)
