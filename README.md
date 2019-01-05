@@ -1,6 +1,6 @@
 # express-validations
 
-[![npm Status](https://img.shields.io/npm/v/express-validations.svg)](https://travis-ci.org/bhavik5/express-validations) [![Build Status](https://travis-ci.org/bhavik5/express-validations.svg?branch=master)](https://travis-ci.org/bhavik5/express-validations) [![Known Vulnerabilities](https://snyk.io/test/npm/express-validations/badge.svg)](https://snyk.io/test/npm/express-validations)
+[![npm Status](https://img.shields.io/npm/v/express-validations.svg)](https://travis-ci.org/bhavik5/express-validations) [![Build Status](https://travis-ci.org/bhavik5/express-validations.svg?branch=master)](https://travis-ci.org/bhavik5/express-validations) [![Known Vulnerabilities](https://snyk.io/test/npm/express-validations/badge.svg)](https://travis-ci.org/bhavik5/express-validations) [![Code Standard](https://img.shields.io/badge/code%20standard-eslint-brightgreen.svg?style=flat)](https://travis-ci.org/bhavik5/express-validations) [![HitCount](http://hits.dwyl.io/bhavik5/express-validations.svg)](https://travis-ci.org/bhavik5/express-validations)
 
 [![npm package](https://nodei.co/npm/express-validations.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/express-validations/)
 
