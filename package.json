@@ -1,6 +1,6 @@
 {
 	"name": "express-validations",
-	"version": "2.2.1",
+	"version": "2.2.2",
 	"description": "NPM package that provides almost all types of validation methods.",
 	"main": "validations.js",
 	"scripts": {
@@ -10,7 +10,8 @@
 		"express",
 		"validations",
 		"validation",
-		"validators"
+		"validators",
+		"validator"
 	],
 	"author": "Bhavik Shah",
 	"git": "https://github.com/bhavik5/express-validations.git",
