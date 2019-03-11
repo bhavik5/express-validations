@@ -43,6 +43,7 @@ If you're arriving here as a express-validations v1 user, please check the Usage
   expressValidations.isLength('String Length', minLength, maxLength)
   // returns true, if length is between specified range
   // If you have only maxLength criteria, use null for minLength
+  // If you have only minLength criteria, use null for maxLength
 ```
 
 ### Complete List of Validation Methods
